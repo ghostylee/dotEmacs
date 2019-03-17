@@ -24,13 +24,16 @@
 #+BEGIN_SRC emacs-lisp
 (use-package spaceline
   :ensure t
-  :config
+  :init
   (require 'spaceline-config)
-  (spaceline-emacs-theme))
-
-(setq-default
- powerline-height 32
- powerline-default-separator 'arrow)
+  (setq powerline-height 32)
+  (setq powerline-default-separator 'arrow)
+  (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+  (setq evil-normal-state-tag "NORMAL")
+  (setq evil-insert-state-tag "INSERT")
+  (setq evil-visual-state-tag "VISUAL")
+  (spaceline-toggle-evil-state-on)
+  (spaceline-spacemacs-theme))
 #+END_SRC
 * UI
 #+begin_src emacs-lisp
