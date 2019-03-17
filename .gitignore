@@ -3,3 +3,4 @@ emacs.el
 *~
 .org-id-locations
 ac-comphist.dat
+.cache
