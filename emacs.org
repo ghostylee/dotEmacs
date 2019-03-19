@@ -233,3 +233,9 @@
         ("C-x t M-t" . treemacs-find-tag)))
 
 #+end_src
+* no-littering
+#+begin_src emacs-lisp
+(use-package no-littering
+  :ensure t)
+
+#+end_src
