@@ -84,11 +84,22 @@
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 (use-package org
   :ensure nil
+  :bind
+    ("C-c a" . org-agenda)
   :config
-  (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-  (evil-define-key 'normal org-mode-map (kbd "SPC") 'org-cycle)
+    (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
+    (evil-define-key 'normal org-mode-map (kbd "SPC") 'org-cycle)
   :custom
-  (org-log-done 'time))
+    (org-log-done t)
+    (org-startup-indented t)
+    (org-todo-keywords
+      (quote ((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)"))))
+    (org-todo-keyword-faces
+      (quote (("TODO"      :foreground "yellow"       :weight bold)
+              ("DOING"     :foreground "red"          :weight bold)
+              ("DONE"      :foreground "forest green" :weight bold)
+              ("WAITING"   :foreground "orange"       :weight bold)
+              ("SOMEDAY"   :foreground "magenta"      :weight bold)))))
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
   :custom
