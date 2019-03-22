@@ -94,16 +94,20 @@
   :custom
     (org-log-done t)
     (org-startup-indented t)
+    (org-archive-location "~/Dropbox/org/archive.org::")
     (org-default-notes-file "~/Dropbox/org/bojo.org")
     (org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
     (org-todo-keywords
-      (quote ((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)"))))
+      (quote ((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "SOMEDAY(s)" "LATER(l)" "|" "DONE(d)")
+              (sequence "EVENT(e)"))))
     (org-todo-keyword-faces
-      (quote (("TODO"      :foreground "yellow"       :weight bold)
-              ("DOING"     :foreground "red"          :weight bold)
-              ("DONE"      :foreground "forest green" :weight bold)
-              ("WAITING"   :foreground "orange"       :weight bold)
-              ("SOMEDAY"   :foreground "magenta"      :weight bold)))))
+      (quote (("TODO"      :foreground "gold"          :weight bold)
+              ("DOING"     :foreground "tomato"        :weight bold)
+              ("DONE"      :foreground "spring green"  :weight bold)
+              ("WAITING"   :foreground "dark orange"   :weight bold)
+              ("SOMEDAY"   :foreground "violet"        :weight bold)
+              ("LATER"     :foreground "dark cyan"     :weight bold)
+              ("EVENT"     :foreground "deep sky blue" :weight bold)))))
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
   :custom
