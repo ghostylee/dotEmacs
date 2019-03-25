@@ -97,6 +97,7 @@
     (evil-define-key 'normal org-mode-map (kbd "SPC") 'org-cycle)
   :custom
     (org-log-done t)
+    (org-tags-column -100)
     (org-archive-location "~/Dropbox/org/archive.org::")
     (org-default-notes-file "~/Dropbox/org/bojo.org")
     (org-capture-templates
