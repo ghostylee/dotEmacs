@@ -102,7 +102,7 @@
     (org-capture-templates
               '(("t" "Task" entry (file+headline "~/Dropbox/org/bujo.org" "Tasks") "* TODO %?\n %i\n %a")
                 ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/bujo.org") "* %?\n")))
-    (org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
+    (org-refile-targets '((org-agenda-files . (:maxlevel . 5))))
     (org-todo-keywords
       (quote ((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "SOMEDAY(s)" "LATER(l)" "|" "DONE(d)")
               (sequence "EVENT(e)"))))
