@@ -2,7 +2,7 @@
 #+AUTHOR: Song Li
 #+EMAIL:ghosty.lee.1984@gmail.com
 
-* use-package
+* use-package.
 #+BEGIN_SRC emacs-lisp
 (setq use-package-always-ensure t)
 (use-package auto-compile
@@ -120,7 +120,7 @@
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
   :custom
-  (org-ellipsis "  "))
+  (org-ellipsis "…"))
 #+end_src
 ** org-agenda
 #+begin_src emacs-lisp
