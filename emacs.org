@@ -37,7 +37,11 @@
 #+END_SRC
 * UI
 #+begin_src emacs-lisp
-(use-package nord-theme :ensure t)
+(use-package nord-theme 
+  :ensure t
+  :init
+  :custom
+  (nord-region-highlight "snowstorm"))
 (setq inhibit-startup-screen t)
 (transient-mark-mode 1)
 
@@ -93,10 +97,12 @@
     (evil-define-key 'normal org-mode-map (kbd "SPC") 'org-cycle)
   :custom
     (org-log-done t)
-    (org-startup-indented t)
     (org-archive-location "~/Dropbox/org/archive.org::")
     (org-default-notes-file "~/Dropbox/org/bojo.org")
-    (org-refile-targets '((org-agenda-files . (:maxlevel . 6))))
+    (org-capture-templates
+              '(("t" "Task" entry (file+headline "~/Dropbox/org/bujo.org" "Tasks") "* TODO %?\n %i\n %a")
+                ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/bujo.org") "* %?\n")))
+    (org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
     (org-todo-keywords
       (quote ((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "SOMEDAY(s)" "LATER(l)" "|" "DONE(d)")
               (sequence "EVENT(e)"))))
@@ -108,10 +114,13 @@
               ("SOMEDAY"   :foreground "violet"        :weight bold)
               ("LATER"     :foreground "dark cyan"     :weight bold)
               ("EVENT"     :foreground "deep sky blue" :weight bold)))))
+#+end_src
+** org-bullets
+#+begin_src emacs-lisp
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
   :custom
-  (org-ellipsis "⤵"))
+  (org-ellipsis "  "))
 #+end_src
 ** org-agenda
 #+begin_src emacs-lisp
