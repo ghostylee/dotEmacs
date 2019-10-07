@@ -17,8 +17,8 @@
 #+END_SRC
 * font
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'default-frame-alist '(font .  "DejaVuSansMonoForPowerline NF-20"))
-(set-face-attribute 'default t :font  "DejaVuSansMonoForPowerline NF-20" )
+(add-to-list 'default-frame-alist '(font .  "RobotoMono Nerd Font-20"))
+(set-face-attribute 'default t :font  "RobotoMono Nerd Font-20" )
 #+END_SRC
 * spaceline
 #+BEGIN_SRC emacs-lisp
@@ -37,11 +37,7 @@
 #+END_SRC
 * UI
 #+begin_src emacs-lisp
-(use-package nord-theme 
-  :ensure t
-  :init
-  :custom
-  (nord-region-highlight "snowstorm"))
+(use-package gruvbox-theme :ensure t)
 (setq inhibit-startup-screen t)
 (transient-mark-mode 1)
 
@@ -105,12 +101,13 @@
                 ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/bujo.org") "* %?\n")))
     (org-refile-targets '((org-agenda-files . (:maxlevel . 5))))
     (org-todo-keywords
-      (quote ((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "SOMEDAY(s)" "LATER(l)" "|" "DONE(d)")
+      (quote ((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "SOMEDAY(s)" "LATER(l)" "|" "DONE(d)" "CANCELLED(c)")
               (sequence "EVENT(e)"))))
     (org-todo-keyword-faces
       (quote (("TODO"      :foreground "gold"          :weight bold)
               ("DOING"     :foreground "tomato"        :weight bold)
               ("DONE"      :foreground "spring green"  :weight bold)
+              ("CANCELLED" :foreground "orange"        :weight bold)
               ("WAITING"   :foreground "dark orange"   :weight bold)
               ("SOMEDAY"   :foreground "violet"        :weight bold)
               ("LATER"     :foreground "dark cyan"     :weight bold)
